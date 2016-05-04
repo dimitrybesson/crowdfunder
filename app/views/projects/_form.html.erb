@@ -19,6 +19,28 @@
     <%= f.label :end_time %>
     <%= f.datetime_select :end_time %>
   </div>
+
+  <h2>Rewards</h2>
+
+    <%= f.fields_for :rewards, Reward.new do |reward| %>
+
+    <div>
+      <%= reward.label :name %>
+      <%= reward.text_field :name %>
+    </div>
+
+    <div>
+      <%= reward.label :description %>
+      <%= reward.text_area :description %>
+    </div>
+
+    <div>
+      <%= reward.label :threshold %>
+      <%= reward.number_field :threshold %>
+    </div>
+
+    <% end %>
+
   <div>
     <%= f.submit %>
   </div>

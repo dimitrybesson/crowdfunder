@@ -1,1 +1,7 @@
 <%= render @user %>
+
+<h1>Projects Backed: </h1>
+<% @user.backed_projects.each do |project| %>
+<%= link_to project.name, project_path(project) %>
+
+<% end %>

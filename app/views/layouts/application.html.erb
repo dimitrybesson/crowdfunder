@@ -11,7 +11,7 @@
 
 <div class="user-status">
   <% if current_user %>
-    Currently logged in as <%= current_user.first_name %> | <%= link_to "Log Out", session_path(current_user), method: :delete %>
+    Currently logged in as <%= link_to current_user.first_name, user_path(current_user) %> | <%= link_to "Log Out", session_path(current_user), method: :delete %>
   <% else %>
     <%= link_to "Sign Up", new_user_path %> | <%= link_to "Log In", new_session_path %>
   <% end %>

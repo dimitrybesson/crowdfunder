@@ -1,2 +1,18 @@
 <%= render @project %>
 <%= link_to "Edit", edit_project_path(@project) %>
+
+
+<div class = 'instructions'> Select a pledge level: </div>
+
+<div class = 'project-rewards'>
+  <% @project.rewards.each do |reward| %>
+    <div class = 'reward'>
+    <%= link_to reward.name, project_pledges_path(@project), method: :post, data: reward.id %>
+    Description: <%= reward.description%>
+    Minimum Contribution: <%= reward.threshold%>
+  </div>
+  <% end %>
+</div>
+
+<div class = 'pledge-form'>
+</div>
