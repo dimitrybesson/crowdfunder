@@ -1,9 +1,9 @@
 class RewardsController < ApplicationController
   before_action :set_reward, only: %i(show edit update destroy)
-  before_action :set_project, except: :index
+  before_action :set_project
 
   def index
-    @rewards = Project.find(params[:project_id]).rewards
+    @rewards = @project.rewards
   end
 
   def show

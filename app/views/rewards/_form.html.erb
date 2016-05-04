@@ -1,0 +1,17 @@
+<%= form_for [@project,@reward] do |f| %>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+  <div>
+    <%= f.label :threshold %>
+    <%= f.number_field :threshold %>
+  </div>
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>

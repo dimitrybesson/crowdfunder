@@ -1,0 +1,8 @@
+<h2>REWARDS!</h2>
+<% if @rewards.any? %>
+  <ul>
+    <%= render @rewards %>
+  </ul>
+<% else %>
+  <h3>No rewards added yet!</h3>
+<% end %>
