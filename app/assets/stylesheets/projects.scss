@@ -2,62 +2,63 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-* {
-  margin: 0;
-  box-sizing: border-box;
-}
-
-html {
-  font-style: tahoma, helvetica, sans-serif;
-}
-
+// * {
+//   margin: 0;
+//   box-sizing: border-box;
+//
+// }
+//
+// html {
+//   font-style: helvetica, sans-serif;
+// }
+//
 #banner {
   margin: 0;
   padding: 5px;
-  position: fixed;
+   position: fixed;
   background-color: #113333;
   border-bottom: black 1px solid;
   color: white;
   width: 100%;
   top: 0;
 }
-
-#contents {
-  margin: 100px 20px 0px;
-}
-
+//
+// #contents {
+//   margin: 100px 20px 0px;
+// }
+//
 #site-logo{
   font-size: 50px;
   margin: 0;
 }
+//
+// .navbar-default{
+//   font-size: 12px;
+//   margin: 0;
+//   display: inline-block;
+// }
+//
+// .nav-links > a{
+//   color: white;
+// }
 
-.nav-links {
-  font-size: 12px;
-  margin: 0;
-  display: inline-block;
-}
-
-.nav-links > a{
-  color: white;
-}
-
-.user-status {
-  font-size: 12px;
-  margin: 0;
-  text-align: right;
-  float: right;
-  overflow: hidden;
-}
-
-.user-status a{
-  color: white;
-}
-
-.project-show {
-  margin-top: 10px;
-  background-color: lightgrey;
-}
-
-.projects {
-
-}
+// .user-status {
+//   font-size: 12px;
+//   margin: 0;
+//   text-align: right;
+//   float: right;
+//   overflow: hidden;
+// }
+//
+// .user-status a{
+//   color: white;
+// }
+//
+// .project-show {
+//   margin-top: 10px;
+//   background-color: lightgrey;
+// }
+//
+// .projects {
+//
+// }

@@ -1,5 +1,5 @@
 <p><%= user.email %></p>
 
-<p><%= user.first_name %> <%= user.last_name %></p>
+<p><%= user.full_name %></p>
 
-<%= link_to "Delete Account", @user, method: :delete %>
+<%= link_to "Delete Account", @user, method: :delete, :data{confirm: 'Please confirm'}%>

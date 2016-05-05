@@ -1,33 +1,32 @@
 <h1>Sign Up! </h1>
 
-
 <div class = 'form'>
-<%= form_for @user do |f| %>
+  <%= form_for @user do |f| %>
+    <table id = 'signup-form'>
+      <tr>
+        <td><%= f.label :email %> </td>
+        <td> <%= f.email_field :email %> </td>
+      </tr>
+      <tr>
+        <td><%= f.label :password %></td>
+        <td><%= f.password_field :password %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :password_confirmation %></td>
+        <td><%= f.password_field :password_confirmation %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :first_name %></td>
+        <td><%= f.text_field :first_name %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :last_name %> </td>
+        <td><%= f.text_field :last_name %></td>
+      </tr>
+    </table>
 
-<table id = 'signup-form'>
-  <tr>
-    <td><%= f.label :email %> </td>
-    <td> <%= f.email_field :email %> </td>
-  </tr>
-  <tr>
-    <td><%= f.label :password %></td>
-    <td><%= f.password_field :password %></td>
-  </tr>
-  <tr>
-    <td><%= f.label :password_confirmation %></td>
-    <td><%= f.password_field :password_confirmation %></td>
-  </tr>
-  <tr>
-    <td><%= f.label :first_name %></td>
-    <td><%= f.text_field :first_name %></td>
-  </tr>
-  <tr>
-    <td><%= f.label :last_name %> </td>
-    <td><%= f.text_field :last_name %></td>
-  </tr>
-</table>
-  <div>
-    <%= f.submit %>
-  </div>
-<% end %>
+    <div>
+      <%= f.submit %>
+    </div>
+  <% end %>
 </div>

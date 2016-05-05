@@ -2,19 +2,19 @@
 <html>
 <head>
   <title>Crowdfunder</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
   <div id = banner>
     <div id = site-logo> Crowdfunder </div>
-    <div class = 'nav-links'>
-      <%= link_to "Home", root_path %>
+    <div class = 'nav'>
+      <%= link_to "Home", root_path %> |
       <%= link_to "Start a Project", new_project_path %>
     </div>
 
-  <div class="user-status">
+  <div class="navbar-static-top">
     <% if current_user %>
       Currently logged in as <%= link_to current_user.first_name, user_path(current_user) %> | <%= link_to "Log Out", session_path(current_user), method: :delete %>
     <% else %>
