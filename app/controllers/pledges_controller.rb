@@ -10,9 +10,11 @@ class PledgesController < ApplicationController
   end
 
   def create
-    @pledge = @project.pledges.build(pledge_params)
-    if @pledge.save
+    @reward = Reward.find(params[:reward_id])
+    @pledge = @reward.pledges.build(xhr_pledge_params)
 
+    if @pledge.save
+      render nothing: true
       #redirect_to project_url(@project), notice: "Pledge accepted!"
     else
       render :new
@@ -29,6 +31,14 @@ class PledgesController < ApplicationController
 
   def pledge_params
     params.require(:pledge).permit(:amount, :reward_id)
+  end
+
+  def xhr_pledge_params
+    {
+      amount: @reward.threshold,
+      user_id: current_user.id
+    }
+
   end
 
   def set_project

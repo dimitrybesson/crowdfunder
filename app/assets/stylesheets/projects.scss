@@ -4,8 +4,11 @@
 
 * {
   margin: 0;
-  font-style: tahoma, helvetica, sans-serif;
   box-sizing: border-box;
+}
+
+html {
+  font-style: tahoma, helvetica, sans-serif;
 }
 
 #banner {
@@ -17,6 +20,10 @@
   color: white;
   width: 100%;
   top: 0;
+}
+
+#contents {
+  margin: 100px 20px 0px;
 }
 
 #site-logo{
@@ -46,6 +53,11 @@
   color: white;
 }
 
-#contents {
-  margin-top: 150px;
+.project-show {
+  margin-top: 10px;
+  background-color: lightgrey;
+}
+
+.projects {
+
 }
