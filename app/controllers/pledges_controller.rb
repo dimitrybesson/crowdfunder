@@ -13,6 +13,7 @@ class PledgesController < ApplicationController
     @pledge = Pledge.new(pledge_params)
     @project = Project.find(params[:project_id])
 
+
     if @pledge.save
       if request.xhr?
         render nothing: true
@@ -21,9 +22,9 @@ class PledgesController < ApplicationController
       end
     else #if it doesn't save
       if request.xhr? #xhr && doesn't save
-      render :new
+        render nothing: true
       else
-        #if not an xhr request and it doesn't save
+        redirect_to project_path(@project), notice: "Pledge unsuccessful :( "
       end
     end
   end
