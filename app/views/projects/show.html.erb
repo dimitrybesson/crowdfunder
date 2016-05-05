@@ -1,7 +1,9 @@
 <%= render @project %>
 <%= link_to "Edit", edit_project_path(@project) %>
 
-
+<%= if current_user.backed_projects.include?(@project) %>
+Welcome back loyal supporter!
+<% end %>
 <div class = 'instructions'> Select a pledge level: </div>
 
 <div class = 'project-rewards'>

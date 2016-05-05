@@ -7,17 +7,25 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <%= link_to "Home", root_path %>
+  <div id = banner>
+    <div id = site-logo> Crowdfunder </div>
+    <div class = 'nav-links'>
+      <%= link_to "Home", root_path %>
+      <%= link_to "Start a Project", new_project_path %>
+    </div>
 
-<div class="user-status">
-  <% if current_user %>
-    Currently logged in as <%= link_to current_user.first_name, user_path(current_user) %> | <%= link_to "Log Out", session_path(current_user), method: :delete %>
-  <% else %>
-    <%= link_to "Sign Up", new_user_path %> | <%= link_to "Log In", new_session_path %>
-  <% end %>
+  <div class="user-status">
+    <% if current_user %>
+      Currently logged in as <%= link_to current_user.first_name, user_path(current_user) %> | <%= link_to "Log Out", session_path(current_user), method: :delete %>
+    <% else %>
+      <%= link_to "Sign Up", new_user_path %> | <%= link_to "Log In", new_session_path %>
+    <% end %>
+  </div>
 </div>
 
+<div id = contents>
 <%= yield %>
+</div>
 
 </body>
 </html>

@@ -1,47 +1,50 @@
-<%= form_for @project do |f| %>
-  <div>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
-  <div>
-    <%= f.label :description %>
-    <%= f.text_area :description %>
-  </div>
-  <div>
-    <%= f.label :goal %>
-    <%= f.number_field :goal %>
-  </div>
-  <div>
-    <%= f.label :start_time %>
-    <%= f.datetime_select :start_time %>
-  </div>
-  <div>
-    <%= f.label :end_time %>
-    <%= f.datetime_select :end_time %>
-  </div>
+<h1> Start up a new project! </h1>
 
-  <h2>Rewards</h2>
-
-    <%= f.fields_for :rewards, Reward.new do |reward| %>
-
-    <div>
-      <%= reward.label :name %>
-      <%= reward.text_field :name %>
+<h2> Project Details </h2> 
+<div class = 'form'>
+  <%= form_for @project do |f| %>
+    <table>
+      <tr>
+        <td><%= f.label :name %></td>
+        <td><%= f.text_field :name %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :description %> </td>
+        <td><%= f.text_area :description %> </td>
+      </tr>
+      <tr>
+        <td><%= f.label :goal %></td>
+        <td><%= f.number_field :goal %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :start_time %></td>
+        <td><%= f.datetime_select :start_time %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :end_time %></td>
+        <td><%= f.datetime_select :end_time %></td>
+      </tr>
+    </table>
+    <h2>Rewards</h2>
+    <div class = 'form'>
+      <%= f.fields_for :rewards, Reward.new do |reward| %>
+    <table>
+        <tr>
+          <td><%= reward.label :name %></td>
+          <td><%= reward.text_field :name %></td>
+        </tr>
+        <tr>
+          <td><%= reward.label :description %></td>
+          <td><%= reward.text_area :description %></td>
+        </tr>
+        <tr>
+          <td><%= reward.label :threshold %></td>
+          <td><%= reward.number_field :threshold %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+      <%= f.submit %>
     </div>
-
-    <div>
-      <%= reward.label :description %>
-      <%= reward.text_area :description %>
-    </div>
-
-    <div>
-      <%= reward.label :threshold %>
-      <%= reward.number_field :threshold %>
-    </div>
-
-    <% end %>
-
-  <div>
-    <%= f.submit %>
-  </div>
-<% end %>
+  <% end %>
+</div>
