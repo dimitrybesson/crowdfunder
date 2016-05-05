@@ -1,3 +1,14 @@
 // Place all the styles related to the Pledges controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.modal-thanks {
+  opacity: 0;
+  width: 80%;
+  height: 40px;
+  text-align: center;
+  background-color: mediumspringgreen;
+  margin: auto;
+  line-height: 40px;
+
+}
