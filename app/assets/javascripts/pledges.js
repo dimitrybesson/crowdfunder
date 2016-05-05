@@ -2,21 +2,21 @@
 
 $(document).on('ready page:load', function(){
 
-    $('.reward > a').on('click', function(event){
+    $('#pledge-submit').on('click', function(event){
         event.preventDefault();
         event.stopImmediatePropagation();
 
       var result = window.confirm('Confirm pledge?');
+      var form = $(this).parent();
+      var href = form.attr('action');
 
 
       if (result) {
 
         $.ajax({
           method: 'POST',
-          url: $(this).attr('href'),
-          data: {
-            reward_id: $(this).attr('data')
-          },
+          url: href,
+          data: form.serialize(),
           dataType: 'html',
           success: function(returned_info){
             console.log('ok, post succeded.');
