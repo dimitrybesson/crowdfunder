@@ -3,8 +3,8 @@
 
 <div class="project-show">
   <%= render @project %>
+  <div id = 'time-sec', data = '<%=(@project.end_time - Time.now)%>' ></div>
   <%= link_to "Edit", edit_project_path(@project) %>
-
 </div>
 
 
