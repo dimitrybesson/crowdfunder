@@ -1,23 +1,38 @@
-<div class = 'modal-thanks'>Thank you for your support</div>
+<div class = 'modal-result'></div>
+
 
 <div class="project-show">
   <%= render @project %>
+  <div id = 'time-sec', data = '<%=(@project.end_time - Time.now)%>' ></div>
+  <%= link_to "Edit", edit_project_path(@project) %>
 </div>
-<%= link_to "Edit", edit_project_path(@project) %>
 
-<% if current_user && (current_user.backed_projects).include?(@project) %>
-Welcome back loyal supporter!
-<% end %>
 
-<div class = 'instructions'> Select a pledge level: </div>
+<section class = 'gratitude'>
+  <% if current_user && (current_user.backed_projects).include?(@project) %>
+    Welcome back loyal supporter!
+  <% end %>
+</section>
+
+<div class = 'instructions'>
+  <h2>Select a pledge level:<h2>
+</div>
 
 <div class = 'project-rewards'>
   <% @project.rewards.each do |reward| %>
     <div class = 'reward'>
-    <%= link_to reward.name, project_pledges_path(@project), method: :post, data: reward.id %>
-    Description: <%= reward.description%>
-    Minimum Contribution: <%= reward.threshold%>
-  </div>
+      <h3> <%= reward.name%> </h3>
+      Description: <%= reward.description%>
+      Minimum Contribution: <%= reward.threshold%>
+
+      <%= form_for [@project, @pledge] do |f| %>
+      <%# binding.pry %>
+        <%= f.hidden_field :amount, value: reward.threshold %>
+        <%= f.hidden_field :user_id, value: current_user.id %>
+        <%= f.hidden_field :reward_id, value: reward.id %>
+        <%= f.submit 'Pledge!', id: 'pledge-submit'%>
+      <% end %>
+    </div>
   <% end %>
 </div>
 
